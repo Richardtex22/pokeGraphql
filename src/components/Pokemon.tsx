@@ -78,7 +78,6 @@ const ShowPokemon: React.FC = () => {
         );
     }
     if (loading) return <h2>LOADING.....</h2>;
-    console.log("date: ", data)
     const { pokemons } = data;
     const loadMore = () => {
         setTotal(151);
@@ -87,25 +86,23 @@ const ShowPokemon: React.FC = () => {
 
     return (
         <>
-            <div className="content-center items-center mx-auto grid grid-cols-4 gap-x-4 mt-8 max-w-5xl">
+            <div className="content-center items-center mx-auto grid grid-cols-3 gap-4 my-8 max-w-7xl">
                 {pokemons && pokemons.slice(0, total).map((pokemon: any) => {
                     return (
                         <PokeCard key={pokemon.id} details={pokemon}></PokeCard>
                     )
                 })
                 }
-               
             </div>
-            {isLoad && 
-                <div className="justify-center mx-auto">
-
-                <button
-                    className="font-mono text-lg mb-4 h-12 w-48 py-0 px-6 text-center mx-auto text-white bg-gray-500 rounded-lg"
-                    onClick={() => loadMore()}>
-                    Get'm all!
+            {isLoad &&
+                <div className="justify-center mx-auto h-48">
+                    <button
+                        className="font-mono text-lg mt-8 h-12 w-48 py-0 px-6 text-center mx-auto text-white bg-gray-500 rounded-lg"
+                        onClick={() => loadMore()}>
+                        Get'm all!
               </button>
                 </div>
-}
+            }
         </>
     )
 }
