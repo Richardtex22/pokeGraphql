@@ -68,7 +68,7 @@ const ShowPokemon: React.FC = () => {
     if (error) {
         return (
             <div className="flex flex-col items-center max-w-4xl mx-auto mt-14 mb-6">
-                <h2 className="justify-center m-12 text-5xl text-center">Houston we have problems, try reloading the page.</h2>
+                <h2 className="justify-center m-12 text-5xl text-center text-white">Houston we have problems, try reloading the page.</h2>
                 <button
                     className="font-mono text-lg mb-4 h-12 w-48 py-0 px-6 text-center mx-4 text-white bg-gray-500 rounded-lg"
                     onClick={() => window.location.reload()}>
@@ -86,7 +86,7 @@ const ShowPokemon: React.FC = () => {
 
     return (
         <>
-            <div className="content-center items-center mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-8 max-w-7xl">
+            <div className="content-center items-center mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8 my-8 max-w-6xl">
                 {pokemons && pokemons.slice(0, total).map((pokemon: PokemonDetails) => {
                     return (
                         <PokeCard key={pokemon.id} details={pokemon}></PokeCard>

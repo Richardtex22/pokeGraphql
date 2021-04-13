@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-//import ApolloClient from "apollo-boost";
 import { ApolloProvider, HttpLink, ApolloClient, InMemoryCache } from "@apollo/client";
 import App from './App';
 import './index.css';

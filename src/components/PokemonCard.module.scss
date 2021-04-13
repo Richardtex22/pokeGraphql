@@ -1,0 +1,49 @@
+.arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -30px;
+    margin-left: -60px;
+    display: inline-block;
+    font-size: 26px;
+    color: black;
+    text-align: center;
+    width: 120px;
+    height: 60px;
+    line-height: 60px;
+    border: 5px solid gray;
+    overflow: hidden;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: width 1.5 ease-in-out,
+                margin 1.5 ease-in-out,
+                border-radius 1.25 ease-in-out,
+                color 1.25 ease-in-out;
+}
+    arrow:hover, .auto {
+      width: 60px;
+      margin-left: -30px;
+      border-radius: 40px;
+      color: rgba(white, 0);
+      transition: width 1.5 ease-in-out,
+                  margin 1.5 ease-in-out,
+                  border-radius 1.25 ease-in-out,
+                  color 1.25 ease-in-out 1.25;
+
+      &:before {
+        animation: lineUp 1 cubic-bezier(0.0, 0.6, 1.0, 0.4) infinite .5s;
+      }
+      &:after {
+        animation: tipUp 1 cubic-bezier(0.0, 0.6, 1.0, 0.4) infinite .5s;
+      }
+    }
+  @keyframes tipUp {
+    0%   { transform: translateY(50px) rotateZ(45deg); }
+    100%   { transform: translateY(-70px) rotateZ(45deg); }
+  }
+  
+  @keyframes lineUp {
+    0%   { transform: translateY(50px); }
+    100%   { transform: translateY(-70px); }
+  }
+  
