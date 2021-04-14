@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import './components/PokemonCard.module.scss';
 import { ShowPokemon } from './components/Pokemon';
 import bg from './assets/salam.png';
 

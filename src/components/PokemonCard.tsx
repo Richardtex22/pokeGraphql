@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { PokemonDetails } from './Pokemon';
+import './PokemonCard.module.scss';
 
 type TDetails = {
     details: PokemonDetails;
@@ -30,7 +31,6 @@ const ColorType = {
 };
 
 const typeColor = (type: string) => {
-    console.log("types: ", type);
     let bgColor = "";
     const valColor = Object.entries(ColorType).forEach(([key, value]) => {
         if (type === key) {
@@ -40,13 +40,13 @@ const typeColor = (type: string) => {
     return bgColor;
 }
 
+
 const PokeCard: React.FC<TDetails> = ({ details }) => {
     const { image, name, number, types } = details;
-    console.log(details);
 
     return (
         <>
-            <div className="relative w-80 max-h-xs flex flex-row justify-between justify-self-center bg-gradient-to-r from-gray-300 to-gray-100" style={cardStyle}>
+            <div className="relative w-80 max-h-xs flex flex-row justify-between justify-self-center bg-gradient-to-r from-gray-200 to-gray-100" style={cardStyle}>
                 <div className="w-auto ml-4 grid justify-start p-2 text-left rounded-l-lg">
                     <p className="text-gray-600 font-bold text-lg">{`#${number}`}</p>
                     <p className="text-gray-800">{name}</p>
@@ -57,7 +57,6 @@ const PokeCard: React.FC<TDetails> = ({ details }) => {
                             <p className="text-gray-100 ">{type}</p>
                         </div>
                     })}
-
                 </div>
                 <div className="w-1/2 h-auto hover:opacity-70 overflow-hidden">
                     <div className="relative w-42 h-40">
