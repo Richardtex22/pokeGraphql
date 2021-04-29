@@ -80,7 +80,7 @@ const ShowPokemon: React.FC = () => {
     if (loading) return <h2>LOADING.....</h2>;
     const { pokemons } = data;
     const loadMore = () => {
-        setTotal(151);
+        setTotal(total + 20);
         setIsLoad(!isLoad);
     }
 
@@ -94,12 +94,12 @@ const ShowPokemon: React.FC = () => {
                 })
                 }
             </div>
-            {isLoad &&
+            {total < 152 &&
                 <div className="justify-center mx-auto h-48">
-                    <button
+                        <button
                         className="font-mono text-lg mt-8 h-12 w-48 py-0 px-6 text-center mx-auto text-white bg-gray-500 rounded-lg"
                         onClick={() => loadMore()}>
-                        Get'm all!
+                        Load more!
               </button>
                 </div>
             }

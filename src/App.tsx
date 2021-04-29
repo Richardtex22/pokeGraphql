@@ -1,16 +1,20 @@
 import React from 'react';
 import './App.css';
-import { ShowPokemon } from './components/Pokemon';
-import bg from './assets/salam.png';
+import Homepage from './components/Home';
+
+import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import PokemonDetails from './components/PokemonDetail';
 
 function App() {
   return (
-    <div className="App">
-      <header className="min-h-screen bg-fixed bg-no-repeat pt-6 pb-12" style={{backgroundImage: `url(${bg})`}}>
-        <h2 className="text-white text-xl my-8 font-mono">Welcome to your pokeApp</h2>
-        <ShowPokemon />
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route path="/" exact component={Homepage} />
+          <Route path="/pokemon/:id" component={PokemonDetails} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
